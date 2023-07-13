@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Car List" icon-name="standard:account">
+        <div class="slds-var-p-around_medium wrapper">
+            <template if:true={cars.length}>
+                <div class="content">
+                    <template for:each={cars} for:item="car">
+                        <c-car-tile key={car.id} car={car} onselected={handleCarSelect}></c-car-tile>
+                    </template>
+                </div>
+            </template>
+            <template if:false={cars.length}>
+                <c-place-holder message="No Car Matching this filter criteria"></c-place-holder>
+            </template>
+
+        </div>
+
+    </lightning-card>
+    
+</template>

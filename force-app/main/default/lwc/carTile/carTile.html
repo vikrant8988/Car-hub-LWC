@@ -1,0 +1,22 @@
+<template>
+    <div onclick={handleCarTileClick}>
+        <div class="content">
+            <img src={car.PICTURE_URL__c} class="carImage slds-align_absolute-center"
+            alt ="Car Picture"/>
+            <div>
+                <p class="title slds-align_absolute-center">{car.Name}</p>
+                <p class ="slds-align_absolute-center">
+                    <strong>MSRP : </strong>
+                    <lightning-formatted-number
+                    value={car.MSRP__c}
+                    class="price"
+                    format-style="currency"
+                    currency-code="INR"
+                    maximum-fraction-digits="0"
+                    ></lightning-formatted-number>
+                </p> 
+            </div>
+        </div>
+    </div>
+    
+</template>
